@@ -1,0 +1,135 @@
+{% extends 'accounts/base.html' %}
+{% block title %}<title>Register</title>{% endblock %}
+{% block content %}
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <form method= "post" enctype="multipart/form-data">
+                {% csrf_token %}
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstName" class="form-control form-control-lg" name="first_name"/>
+                      <label class="form-label" for="firstName">First Name</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="lastName" class="form-control form-control-lg" name="last_name"/>
+                      <label class="form-label" for="lastName">Last Name</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline datepicker w-100">
+                      <input type="text" class="form-control form-control-lg" name = "age" />
+                      <label class="form-label">Your age</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                        value="option1" checked />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender"
+                        value="option2" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                  </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="email" id="emailAddress" class="form-control form-control-lg" name ="email" />
+                      <label class="form-label" for="emailAddress">Email</label>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="userpassword">Password</label>
+                      <input type="password" class="form-control" placeholder="Password" name = "password">
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="phoneNumber" />
+                      <label class="form-label" for="phoneNumber">Phone Number</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-12">
+  
+                    <select class="select form-control-lg" name = "city">
+                      <option value="1" disabled>Choose option</option>
+                      <option value="Riyadh">Riyadh</option>
+                      <option value="Jeddah">Jeddah</option>
+                      <option value="Dammam">Dammam</option>
+                      <option value="Medina">Medina</option>
+                    </select>
+                    <label class="form-label select-label">City</label>
+  
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+    
+                      <select class="select form-control-lg" name = "is_skater" >
+                        <option value="1" disabled>Choose option</option>
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
+                        
+                      </select>
+                      <label class="form-label select-label">Are you Skater?</label>
+    
+                    </div>
+                  </div>
+                  <label  class="form-label mt-3">Profile Image</label>
+                  <input type="file" name="avatar" accept="image/*" class="form-control" />
+  
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                </div>
+                <p class="mb-5 pb-lg-2 mt-5 p-3" style="color: #393f81;">You have already an account? <a href="{% url 'accounts:login' %}"
+                    style="color: #393f81;">Login here</a></p>
+  
+              </form>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  {% endblock %}

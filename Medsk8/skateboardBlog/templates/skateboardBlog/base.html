@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head-->
+ <head>
+    <meta charset= "UTF-8">
+    <meta http-equiv= "X-UA-Compatible" content= "IE=edge">
+    <meta name= "viewport" content= "width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>{% block title %}MEDSK8{% endblock %}</title>
+    
+ </head>
+ <body class = bg-secondary>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <div class="navbar navbar-expand-md bg-dark navbar-dark text-white">
+        <div class="container">
+            <a href="{% url 'skateboardBlog:home' %}" class= "navbar-brand">MEDSK8</a>
+            <button
+                class= "navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainmenu"
+            >
+            <span class= "navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class= "navbar-nav ms-auto">
+                    <li class= "nav-item"><a href="{% url 'skateboardBlog:home' %}" class="nav-link">Home</a></li>
+                    <li class= "nav-item"><a href="{% url 'skateboardBlog:home' %}" class= "nav-link">Blog</a></li>
+                    <li class= "nav-item"><a href="{% url 'learnSkateboard:home' %}" class="nav-link">LearnSkateboarding</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--Content-->
+    
+<section id= "hero" class= "bg-dark text-light text-center text-sm-start ру-5">
+<div class= "container">
+    <div class="d-sm-flex align-items-center justify-content-center">
+        <div class= "ру-3">
+          {% block header %}
+          <h1 class= "display-5"> مرحبا بك في ميدسكيت <span class="text-info">من نحن ؟ </span></h1>
+          <p class= "ру-1 lead" >مجموعة لاعبين من مختلف الأماكن تجمعنا رياضة التزلج على اللوح</p>
+          <a href="{% url 'skateboardBlog:home' %}"><button class= "btn btn-info">ابدا الان</button></a>
+          {% endblock %}
+        </div>
+        <img class= "d-none d-sm-block img-fluid w-50" Src="{% static 'images/logo.svg' %}">
+        {% block content %}{% endblock  %}
+    </div>
+</div>
+</section>
+
+        <!--          Cards             -->
+        {%block Card %}
+        <section class="py-5">
+          <div class="container">
+              <div class="row text-center">
+      
+                  <div class="col-sm">
+                      <div class="card bg-dark text-light mb-3">
+                          <div class="h1 mt-3">
+                              <i class= "bi bi-award-fill"></i>
+                          </div>
+                          <div class="card-body text-center mt-3">
+                              <h4 class="card-title">Experince</h4>
+                              <p class= "card-text" >We have many projects before this website Here is our last Projects & Experince </p>
+                              <a href="https://twitter.com/tuwaiqacademy" class= "btn btn-info">Learn More</a>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="col-sm">
+                      <div class="card bg-dark text-light mb-3">
+                          <div class="h1 mt-3">
+                            <i class="bi bi-list-nested"></i>
+                          </div>
+                          <div class="card-body text-center mt-3">
+                              <h4 class="card-title">Learn Skateboarding</h4>
+                              <p class= "card-text" >Skateboarding is so Funny. We offer Skateboarding courses you can chick it out from here</p>
+                              <a href="" class= "btn btn-info">Start Learning</a>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="col-sm">
+                      <div class="card bg-dark text-light mb-3">
+                          <div class="h1 mt-3">
+                              <i class= "bi bi-person-lines-fill"></i>
+                          </div>
+                          <div class="card-body text-center mt-3">
+                              <h4 class="card-title">Contact us</h4>
+                              <p class= "card-text" >We are free For any questions. Working time: from 8am till 4pm </p>
+                              <a href="{% url 'skateboardBlog:home' %}" class= "btn btn-info">Learn More</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+        {% endblock %}
+
+            
+
+                    <!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Whatsapp -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="bi bi-whatsapp"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="bi bi-twitter"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="bi bi-instagram"></i>
+      </a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/M-I4" role="button"
+        ><i class="bi bi-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Search</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="text" class="form-control" />
+              <label class="form-label" for="form5Example21">LearnSkateboarding</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Enter
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <span class="text-info">MEDSK8</span></h1>
+        <p>
+            مجموعة لاعبين من مختلف الأماكن تجمعنا رياضة التزلج على اللوح
+        </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Blog</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Posts</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Add post</a>
+            </li>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Learn Skateboarding</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Components</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Types</a>
+            </li>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact us</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Instagram</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Twitter</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Github</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Email</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MEDSK8.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+    
+
+    
+</body>
+</html>

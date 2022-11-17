@@ -1,0 +1,76 @@
+{% extends 'learnSkateboard/base.html' %}
+{% load static %}
+
+
+{% block title %}Components{% endblock  %}
+
+{% block header %}
+                <h1 class= "display-5">مكونات<span class="text-info"> لوح التزلج </span></h1>
+                <p class= "ру-1 lead" >	يتشترك معظم ألواح التزلج في مكونات وأجزاء عامة وتوجد العديد من الأشكال الغريبة والتصاميم التي تقع خارج نطاق بعض الأوصاف المشتركة، أما الأجزاء المعتادة لتصميم لوح التزلج تتكون من التالي
+                </p>
+                
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<br>
+<br>
+  <section id= "hero" class= "bg-dark text-light text-center text-sm-start ру-5">
+    <div class= "container">
+        <div class="d-sm-flex align-items-center justify-content-center">
+            <div class= "ру-3">
+                
+                <h1 class= "display-5"><span class="text-info">اللوح</span></h1>
+                <p class= "ру-1 lead" >	مصنوع من مواد خاصة تساعد على الحفاظ على سطح اللوح من الكسر : مثل الألياف الزجاجية، الخيزران، الراتنج وألياف الكربون والألمنيوم، واللدائن والخشب والقيقب ,تختلف في الحجم واللون والجودة، ويصل طول معظمها من 7 حتى 10,5 بوصة، ويمكن استخدام ألواح أوسع للمزيد من الاستقرار عند القفز أو الانحدار من منحدر التزلج وفي هذه الحالة يجب أن يكون طولها بين 28 و 33 بوصة، أحيانا يتم طباعة اسم الشركة المصنعة في أسفل اللوح.
+                </p>
+                
+                
+            </div>
+            <img class= "d-none d-sm-block img-fluid w-50" Src="{% static 'images/undraw_skateboard.svg' %}">
+            
+        </div>
+    </div>
+    </section>
+<br>
+<br>
+
+    <section id= "hero" class= "bg-dark text-light text-center text-sm-start ру-5">
+        <div class= "container">
+            <div class="d-sm-flex align-items-center justify-content-center">
+                <div class= "ру-3">
+                    
+                    <h1 class= "display-5"><span class="text-info">الحاملات</span></h1>
+                    <p class= "ру-1 lead" >	يتكون لوح التزلج أيضاً من حاملات معدنية غالبا تكون أثنين مصنوعة من سبائك الألومنيوم، وهي التي تصل العجلات مع اللوح وتتكون الحاملات من جزأين مرتبطين الجزء العلوي يربط الحاملة مع اللوح ويسمى الأساس، وتحتها حلقات من المطاط توفر سهولة آلية التحويل والانتقال والتحكم باللوح. والجزء السفلي يرتبط بالعجلات.ويمكن من خلال شد أو تخفيف المسمار إيجاد أفضل طريقة للتحكم باللوح والاستقرار أثناء تنفيذ الحركات.
+                    </p>
+                    
+                </div>
+                <img class= "d-none d-sm-block img-fluid w-50" Src="{% static 'images/trucks.svg' %}">
+                
+            </div>
+        </div>
+        </section>
+
+<br>
+<br>
+
+
+        <section id= "hero" class= "bg-dark text-light text-center text-sm-start ру-5">
+            <div class= "container">
+                <div class="d-sm-flex align-items-center justify-content-center">
+                    <div class= "ру-3">
+                        
+                        <h1 class= "display-5"> مرحبا بك في ميدسكيت <span class="text-info">من نحن ؟ </span></h1>
+                        <p class= "ру-1 lead" >مجموعة لاعبين من مختلف الأماكن تجمعنا رياضة التزلج على اللوح</p>
+                        <a href="{% url 'skateboardBlog:home' %}"><button class= "btn btn-info">ابدا الان</button></a>
+                        
+                    </div>
+                    <img class= "d-none d-sm-block img-fluid w-50" Src="{% static 'images/logo.svg' %}">
+                    
+                </div>
+            </div>
+            </section>
+            <br><br>
+    {% endblock  %}
